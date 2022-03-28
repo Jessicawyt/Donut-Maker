@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "01336e78-5b3d-4c75-88b6-7c615221f874": {
+      "ProjectGuid": "01336e78-5b3d-4c75-88b6-7c615221f874",
+      "DisplayName": "DonutMaker",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
