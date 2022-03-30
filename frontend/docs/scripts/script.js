@@ -206,7 +206,7 @@ function NewAchievement(currentCnt){
                 currentAchievement--;
             }
 
-            Popup(`New Donut Unlocked:`, `${data[currentAchievement].name}`,5000,'tr')
+            Popup(`New Donut Unlocked: ${data[currentAchievement].name}`,`Check out the ingredients by clicking the donut`,6000,'tr')
 
             canvas.src = `${data[currentAchievement].image}`;  
             ingredients.src = data[currentAchievement].image;  
@@ -214,11 +214,12 @@ function NewAchievement(currentCnt){
 
             ingredients.addEventListener('click',function(){
                 let ingMsg = "";
+                console.log(data[currentAchievement].ingredients);
                 Array.from(data[currentAchievement].ingredients).forEach(i=>{
                     console.log(i.name);
                     ingMsg += i.name;     
                 });
-                Popup(data[currentAchievement].name + ` Ingredients:`,ingMsg,6000,'mr');
+                Popup(data[currentAchievement].name + ` Ingredients:`, ingMsg, 6000,'mr');
             });
 
             
