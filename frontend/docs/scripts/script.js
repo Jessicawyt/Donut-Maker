@@ -214,10 +214,10 @@ function NewAchievement(currentCnt){
 
             ingredients.addEventListener('click',function(){
                 let ingMsg = "";
-                console.log(data[currentAchievement].ingredients);
+                let ingArr = [];
                 Array.from(data[currentAchievement].ingredients).forEach(i=>{
-                    console.log(i.name);
-                    ingMsg += i.name;     
+                    ingArr.push(i.name);
+                    ingMsg = ingArr.join(',');     
                 });
                 Popup(data[currentAchievement].name + ` Ingredients:`, ingMsg, 6000,'mr');
             });
