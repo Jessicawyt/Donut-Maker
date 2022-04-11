@@ -1,0 +1,377 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Amatic SC', cursive;
+    height:100vh;
+}
+
+.hidden {
+    display:none;
+}
+
+.canvas {
+    height:0px;
+    width:0px;
+    /* align-self: center;
+    transform: translateX(-30%); */
+}
+
+main {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction: row;
+
+}
+
+.left {
+    height:100vh;
+    padding-top: 1%;
+    padding-bottom:3%;
+    border-radius:0% 87% 78% 0% / 50% 88% 84% 50% ;
+    width:180px;
+    color:white;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow:hidden;
+}
+
+a {
+    text-decoration: none;
+    color:white;
+}
+
+h1 {
+    padding-left:6%;
+    font-size:1.8rem;
+    letter-spacing: 1.6px;
+    font-weight: 800;
+    
+}
+
+h1 span {  
+    display: -moz-inline-stack;
+    display: inline-block;
+    /* zoom: 1; */
+    *display: inline;
+    /* vertical-align: top; */
+}
+
+
+#donutCount {
+    width:max-content;
+    outline:none;
+    border:none;
+    background-color:transparent;
+    color:white;
+    font-size:5rem;
+    margin-top: -30%;
+    margin-left: 10%;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    text-align:start;
+}
+
+.costs {
+    margin: 5% 5% 15% 5%;
+    font-size:25px;
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    row-gap: 30%;
+    align-items: center;
+    justify-items: center;
+}
+
+.donutIcon {
+    width:22px;
+    height:22px;
+    margin-left:-8px;
+    animation:icons .6s infinite;
+}
+
+.clickerTitle, .mulTitle {
+    
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#autoClickerCost, #multiplierCost {
+    font-weight: bold;
+    opacity:0;
+}
+
+#reset {
+    width:3rem;
+    height:3rem;
+    outline:none;
+    border:none;
+    border-radius: 68% 86% 75% 79% / 76% 67% 89% 76% ;
+    background-color:white;
+    color:black;
+    font-size:2rem;
+    font-weight: bolder;
+    letter-spacing: -0.8px;
+    text-align: center;
+    margin:0 20%;
+    font-family: 'Amatic SC', cursive;
+}
+
+#reset:hover {
+    cursor:pointer;
+}
+#reset:active {
+    background-color: black;
+    color:white;
+}
+
+
+.right{
+    width:80%;
+    /* margin-left:-4rem; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    height:35%;
+    align-self:center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center ;
+    
+
+}
+
+#makeDountBtn {
+    margin:0 .7rem;
+    padding-left:10px;
+    padding-right: 10px;
+    width:100px;
+    height:100px;
+    
+    transition:opacity 1s;
+    opacity: 0;
+}
+
+#makeDountBtn:hover{
+    cursor:pointer;
+}
+
+.factAndAuto{
+    margin-bottom:.7rem;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.auto-clicker {
+    margin-left:6rem;
+    text-align: right;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    transition:opacity 1s;
+    opacity: 0;
+}
+
+#rdFact{
+    width:40px;
+    height:40px;
+    transition:opacity 1s;
+    opacity: 0;
+    margin-left:10rem;
+    margin-bottom:1.6rem;
+}
+
+#autoClickerBtn {
+    
+    border:none;
+    height:45px;
+    width:45px;
+    background: url('/docs/css/images/bluedonut.svg') no-repeat center;
+
+}
+
+#autoClickerOwned, #multiplierOwned {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5rem;
+    /* margin-bottom:.6rem; */
+    /* font-family: 'Amatic SC', cursive; */
+}
+
+#autoClickerOwned{
+    margin-right:.8rem;
+}
+
+#multiplierOwned{
+    margin-left:.8rem;
+}
+
+.ingrdAndMul{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:.4rem;
+    margin-bottom:1rem;
+}
+
+.ingredients{
+    width:45px;
+    height:45px;
+    transition:opacity 1s;
+    opacity: 0;
+    margin-right:6rem;
+    margin-bottom:1.8rem;
+    cursor:pointer;
+}
+
+.multiplier {
+    margin-right: 3rem;
+    width:max-content;
+    text-align: right;
+    display:flex;
+    flex-direction:row-reverse;
+    align-items: center;
+
+    transition:opacity 1s;
+    opacity: 0;
+}
+
+#clickMultiplierBtn {
+    border:none;
+    height:30px;
+    width:30px;
+    background: url('/docs/css/images/blcdonut.svg') no-repeat center;
+    cursor:default;
+}
+
+.overlap{
+    height:45px;
+    width:45px;
+    transform:rotate(-30deg);
+    padding-right:6px;
+}
+
+.mul {
+    z-index: -1;
+    margin-top:-20rem;
+}
+
+.donuts {
+    overflow: hidden;
+}
+
+.startBtnBG {
+    padding-top:1.8rem;
+    width:200px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+}
+
+#startBtn {
+    animation-name: startBtnJumping;
+    animation-duration: .8s;
+    animation-iteration-count: infinite;
+    transition:opacity 1s;
+    overflow:visible;
+}
+#startBtn:hover {
+    cursor:pointer;
+}
+
+@keyframes icons {
+    0% {transform:translateY(-4%);}
+    100% {transform:translateY(0);}
+}
+
+@keyframes jumpingButtons {
+    0% {transform:translateY(-19%);}
+    20% {transform:translateY(0);}
+    45% {transform:translateY(-9%);}
+    65% {transform:translateY(0);}
+    85% {transform:translateY(-3%);}
+    100% {transform:translateY(0);}
+}
+
+@keyframes skippingLogoEven {
+    0% {transform:rotate(3deg);}
+    25% {transform:rotate(-3deg);} 
+    50% {transform:rotate(-2deg);} 
+    75% {transform:rotate(3deg);} 
+    100% {transform:rotate(1.5deg);}
+}
+
+@keyframes skippingLogoOdd {
+    0% {transform:rotate(-2deg);}
+    25% {transform:rotate(2deg);} 
+    50% {transform:rotate(-.1deg);} 
+    75% {transform:rotate(1deg);} 
+    100% {transform:rotate(-2.5deg);}
+}
+
+@keyframes tsuColor {
+    0% {background-color: black;}
+    25% {background-color: #c05728;}
+    50% {background-color: black;}
+    75% {background-color: #c05728;}
+    100% {background-color: black;}
+  }
+
+@keyframes tsuMotion{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(1475deg);}
+}
+
+@keyframes startBtnJumping{
+    0% {transform:rotate(-8deg);}
+    25% {transform:rotate(3deg);} 
+    50% {transform:rotate(-1deg);} 
+    75% {transform:rotate(4deg);} 
+    100% {transform:rotate(-8.5deg);}
+}
+
+@keyframes startDisappear {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
+
+@keyframes startTopBreaking{
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(3deg);}
+    100% {transform: rotate(0deg);} 
+}
+@keyframes startBottomBreaking{
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(-3deg);}
+    100% {transform: rotate(0deg);} 
+
+    /*Why doesn't TRANSLATE work??
+    /* 0% {transform: translateY(0px);}
+    50% {transform: translateY(5px);}
+    100% {transform: translateY(0px);} */
+}
+
+@keyframes clickAppear {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes clickDisappear {
+    0% {opacity:1;}
+    100% {opacity:0;}
+}
